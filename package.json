@@ -2,8 +2,9 @@
   "name": "react-menu-aim",
   "version": "1.0.1",
   "description": "A React mixin version of Amazon's jQuery-menu-aim plugin",
-  "main": "index.js",
+  "main": "dist/decorator.js",
   "scripts": {
+    "compile": "rm -rf dist/* && babel . --out-dir dist --ignore node_modules,dist --source-maps",
     "test": "./node_modules/karma/bin/karma start test/karma.conf.js",
     "build": "./node_modules/browserify/bin/cmd.js demo/js/app.js -d -t babelify -p [minifyify --no-map] -o demo/js/app.bundle.js",
     "watch": "./node_modules/watchify/bin/cmd.js demo/js/app.js -t babelify -o demo/js/app.bundle.js -v -d"
@@ -12,12 +13,7 @@
     "type": "git",
     "url": "https://github.com/jasonslyvia/react-menu-aim.git"
   },
-  "keywords": [
-    "react",
-    "amazon",
-    "jquery-menu-aim",
-    "menu-aim"
-  ],
+  "keywords": ["react", "amazon", "jquery-menu-aim", "menu-aim"],
   "author": "jasonslyvia <jasonslyvia@gmail.com> (http://undefinedblog.com/)",
   "license": "MIT",
   "bugs": {
@@ -28,8 +24,14 @@
     "react-dom": "^0.14.0 || ^15.0.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
     "babelify": "~6.1.2",
     "browserify": "~10.2.4",
+    "babel-core": "^6.9.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-1": "^6.5.0",
     "browserify-istanbul": "^0.2.1",
     "chai": "^3.0.0",
     "chai-spies": "^0.6.0",
